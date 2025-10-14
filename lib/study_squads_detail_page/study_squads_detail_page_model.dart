@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/index.dart';
-import 'profile_page_widget.dart' show ProfilePageWidget;
+import 'study_squads_detail_page_widget.dart' show StudySquadsDetailPageWidget;
 import 'package:flutter/material.dart';
 
-class ProfilePageModel extends FlutterFlowModel<ProfilePageWidget> {
+class StudySquadsDetailPageModel
+    extends FlutterFlowModel<StudySquadsDetailPageWidget> {
   @override
   void initState(BuildContext context) {}
 

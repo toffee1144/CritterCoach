@@ -29,6 +29,9 @@ class _AiChatPageWidgetState extends State<AiChatPageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => AiChatPageModel());
+
+    _model.textController ??= TextEditingController();
+    _model.textFieldFocusNode ??= FocusNode();
   }
 
   @override
@@ -115,176 +118,265 @@ class _AiChatPageWidgetState extends State<AiChatPageWidget> {
                   ),
                 ),
               ),
-              Align(
-                alignment: AlignmentDirectional(0.0, 1.0),
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                  child: SafeArea(
-                    child: Container(
-                      width: 360.0,
-                      height: 720.0,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                      ),
-                      alignment: AlignmentDirectional(0.0, 1.0),
-                      child: Stack(
-                        children: [
-                          Align(
-                            alignment: AlignmentDirectional(0.0, -0.83),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8.0),
-                              child: SvgPicture.asset(
-                                'assets/images/creature_happy.svg',
-                                width: 200.0,
-                                height: 200.0,
-                                fit: BoxFit.contain,
+              Expanded(
+                child: Align(
+                  alignment: AlignmentDirectional(0.0, 1.0),
+                  child: Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                    child: SafeArea(
+                      child: Container(
+                        width: 360.0,
+                        height: 720.0,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                        alignment: AlignmentDirectional(0.0, 1.0),
+                        child: Stack(
+                          children: [
+                            Align(
+                              alignment: AlignmentDirectional(0.0, -0.83),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: SvgPicture.asset(
+                                  'assets/images/creature_happy.svg',
+                                  width: 200.0,
+                                  height: 200.0,
+                                  fit: BoxFit.contain,
+                                ),
                               ),
                             ),
-                          ),
-                          Align(
-                            alignment: AlignmentDirectional(0.0, -0.96),
-                            child: Text(
-                              'Talk to Your Creature!',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.roboto(
+                            Align(
+                              alignment: AlignmentDirectional(0.0, -0.96),
+                              child: Text(
+                                'Talk to Your Creature!',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      font: GoogleFonts.roboto(
+                                        fontWeight: FontWeight.bold,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
+                                      color: Color(0xFF2B3F6C),
+                                      fontSize: 20.0,
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .fontStyle,
                                     ),
-                                    color: Color(0xFF2B3F6C),
-                                    fontSize: 20.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.bold,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                            ),
-                          ),
-                          Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 275.0, 0.0, 0.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Align(
-                                    alignment: AlignmentDirectional(-0.7, 0.0),
-                                    child: wrapWithModel(
-                                      model: _model.aiChatBubbleModel1,
-                                      updateCallback: () => safeSetState(() {}),
-                                      child: AiChatBubbleWidget(),
-                                    ),
-                                  ),
-                                  Align(
-                                    alignment: AlignmentDirectional(0.7, 0.0),
-                                    child: wrapWithModel(
-                                      model: _model.userChatBubbleModel1,
-                                      updateCallback: () => safeSetState(() {}),
-                                      child: UserChatBubbleWidget(),
-                                    ),
-                                  ),
-                                  Align(
-                                    alignment: AlignmentDirectional(-0.7, 0.0),
-                                    child: wrapWithModel(
-                                      model: _model.aiChatBubbleModel2,
-                                      updateCallback: () => safeSetState(() {}),
-                                      child: AiChatBubbleWidget(),
-                                    ),
-                                  ),
-                                  Align(
-                                    alignment: AlignmentDirectional(0.7, 0.0),
-                                    child: wrapWithModel(
-                                      model: _model.userChatBubbleModel2,
-                                      updateCallback: () => safeSetState(() {}),
-                                      child: UserChatBubbleWidget(),
-                                    ),
-                                  ),
-                                  Align(
-                                    alignment: AlignmentDirectional(-0.7, 0.0),
-                                    child: wrapWithModel(
-                                      model: _model.aiChatBubbleModel3,
-                                      updateCallback: () => safeSetState(() {}),
-                                      child: AiChatBubbleWidget(),
-                                    ),
-                                  ),
-                                ].divide(SizedBox(height: 15.0)),
                               ),
                             ),
-                          ),
-                          Align(
-                            alignment: AlignmentDirectional(0.0, 0.91),
-                            child: SafeArea(
-                              child: Container(
-                                width: 360.0,
-                                height: 90.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      blurRadius: 4.0,
-                                      color: Color(0x33000000),
-                                      offset: Offset(2.0, 0.0),
-                                    )
-                                  ],
+                            Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 275.0, 0.0, 0.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Align(
+                                      alignment:
+                                          AlignmentDirectional(-0.7, 0.0),
+                                      child: wrapWithModel(
+                                        model: _model.aiChatBubbleModel1,
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: AiChatBubbleWidget(),
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment: AlignmentDirectional(0.7, 0.0),
+                                      child: wrapWithModel(
+                                        model: _model.userChatBubbleModel1,
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: UserChatBubbleWidget(),
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment:
+                                          AlignmentDirectional(-0.7, 0.0),
+                                      child: wrapWithModel(
+                                        model: _model.aiChatBubbleModel2,
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: AiChatBubbleWidget(),
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment: AlignmentDirectional(0.7, 0.0),
+                                      child: wrapWithModel(
+                                        model: _model.userChatBubbleModel2,
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: UserChatBubbleWidget(),
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment:
+                                          AlignmentDirectional(-0.7, 0.0),
+                                      child: wrapWithModel(
+                                        model: _model.aiChatBubbleModel3,
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: AiChatBubbleWidget(),
+                                      ),
+                                    ),
+                                  ].divide(SizedBox(height: 15.0)),
                                 ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 1.0),
-                                  child: Container(
-                                    width: 360.0,
-                                    height: 1.0,
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(0.0, 1.0),
+                              child: SafeArea(
+                                child: Container(
+                                  width: 360.0,
+                                  height: 100.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 4.0,
+                                        color: Color(0x33000000),
+                                        offset: Offset(2.0, 0.0),
+                                      )
+                                    ],
+                                  ),
+                                  child: Align(
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Stack(
-                                      alignment: AlignmentDirectional(0.0, 1.0),
                                       children: [
                                         Align(
                                           alignment:
                                               AlignmentDirectional(0.0, 0.0),
-                                          child: SafeArea(
-                                            child: Container(
-                                              width: 334.0,
-                                              height: 50.0,
-                                              decoration: BoxDecoration(
-                                                color:
+                                          child: Container(
+                                            width: 334.0,
+                                            child: TextFormField(
+                                              controller: _model.textController,
+                                              focusNode:
+                                                  _model.textFieldFocusNode,
+                                              autofocus: false,
+                                              obscureText: false,
+                                              decoration: InputDecoration(
+                                                isDense: true,
+                                                labelStyle: FlutterFlowTheme.of(
+                                                        context)
+                                                    .labelMedium
+                                                    .override(
+                                                      font: GoogleFonts.roboto(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontStyle,
+                                                    ),
+                                                hintText:
+                                                    'Type your message here...',
+                                                hintStyle: FlutterFlowTheme.of(
+                                                        context)
+                                                    .labelMedium
+                                                    .override(
+                                                      font: GoogleFonts.roboto(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      color: Color(0xFF979797),
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontStyle,
+                                                    ),
+                                                enabledBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: Color(0xFFD7D7D7),
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                focusedBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: Color(0x00000000),
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                errorBorder: OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .error,
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                focusedErrorBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .error,
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                filled: true,
+                                                fillColor:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
-                                                borderRadius:
-                                                    BorderRadius.circular(10.0),
-                                                border: Border.all(
-                                                  color: Color(0xFF979797),
-                                                ),
                                               ),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Text(
-                                                    'Type a message here...',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          font:
-                                                              GoogleFonts.inter(
-                                                            fontWeight:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                          ),
-                                                          letterSpacing: 0.0,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.roboto(
                                                           fontWeight:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -296,29 +388,47 @@ class _AiChatPageWidgetState extends State<AiChatPageWidget> {
                                                                   .bodyMedium
                                                                   .fontStyle,
                                                         ),
-                                                  ),
-                                                  FlutterFlowIconButton(
-                                                    borderRadius: 20.0,
-                                                    buttonSize: 40.0,
-                                                    fillColor:
-                                                        Color(0xFF3380EF),
-                                                    icon: Icon(
-                                                      Icons.send,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .info,
-                                                      size: 24.0,
-                                                    ),
-                                                    onPressed: () {
-                                                      print(
-                                                          'IconButton pressed ...');
-                                                    },
-                                                  ),
-                                                ].divide(
-                                                    SizedBox(width: 110.0)),
-                                              ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                              textAlign: TextAlign.start,
+                                              maxLines: 2,
+                                              cursorColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              enableInteractiveSelection: true,
+                                              validator: _model
+                                                  .textControllerValidator
+                                                  .asValidator(context),
                                             ),
+                                          ),
+                                        ),
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(0.88, 0.0),
+                                          child: FlutterFlowIconButton(
+                                            borderRadius: 20.0,
+                                            buttonSize: 40.0,
+                                            fillColor: Color(0xFF3380EF),
+                                            icon: Icon(
+                                              Icons.send,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .info,
+                                              size: 25.0,
+                                            ),
+                                            onPressed: () {
+                                              print('IconButton pressed ...');
+                                            },
                                           ),
                                         ),
                                       ],
@@ -327,8 +437,8 @@ class _AiChatPageWidgetState extends State<AiChatPageWidget> {
                                 ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),

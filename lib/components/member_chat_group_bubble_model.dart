@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/index.dart';
-import 'profile_page_widget.dart' show ProfilePageWidget;
+import 'member_chat_group_bubble_widget.dart' show MemberChatGroupBubbleWidget;
 import 'package:flutter/material.dart';
 
-class ProfilePageModel extends FlutterFlowModel<ProfilePageWidget> {
+class MemberChatGroupBubbleModel
+    extends FlutterFlowModel<MemberChatGroupBubbleWidget> {
   @override
   void initState(BuildContext context) {}
 

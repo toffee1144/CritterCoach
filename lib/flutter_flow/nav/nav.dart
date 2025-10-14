@@ -151,58 +151,100 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : ProfilePageWidget(),
         ),
         FFRoute(
-          name: UploadProofPageWidget.routeName,
-          path: UploadProofPageWidget.routePath,
-          builder: (context, params) => UploadProofPageWidget(
-            taskIndex: params.getParam(
-              'taskIndex',
-              ParamType.int,
-            ),
-            taskTitle: params.getParam(
-              'taskTitle',
-              ParamType.String,
-            ),
-          ),
-        ),
+            name: UploadProofPageWidget.routeName,
+            path: UploadProofPageWidget.routePath,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: UploadProofPageWidget(
+                    taskIndex: params.getParam(
+                      'taskIndex',
+                      ParamType.int,
+                    ),
+                    taskTitle: params.getParam(
+                      'taskTitle',
+                      ParamType.String,
+                    ),
+                  ),
+                )),
         FFRoute(
-          name: VerifyingProofPageWidget.routeName,
-          path: VerifyingProofPageWidget.routePath,
-          builder: (context, params) => VerifyingProofPageWidget(
-            taskIndex: params.getParam(
-              'taskIndex',
-              ParamType.int,
-            ),
-            taskTitle: params.getParam(
-              'taskTitle',
-              ParamType.String,
-            ),
-          ),
-        ),
+            name: VerifyingProofPageWidget.routeName,
+            path: VerifyingProofPageWidget.routePath,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: VerifyingProofPageWidget(
+                    taskIndex: params.getParam(
+                      'taskIndex',
+                      ParamType.int,
+                    ),
+                    taskTitle: params.getParam(
+                      'taskTitle',
+                      ParamType.String,
+                    ),
+                  ),
+                )),
         FFRoute(
-          name: SuccessPageWidget.routeName,
-          path: SuccessPageWidget.routePath,
-          builder: (context, params) => SuccessPageWidget(),
-        ),
+            name: SuccessPageWidget.routeName,
+            path: SuccessPageWidget.routePath,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: SuccessPageWidget(),
+                )),
         FFRoute(
-          name: FailedPageWidget.routeName,
-          path: FailedPageWidget.routePath,
-          builder: (context, params) => FailedPageWidget(),
-        ),
+            name: FailedPageWidget.routeName,
+            path: FailedPageWidget.routePath,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: FailedPageWidget(),
+                )),
         FFRoute(
-          name: AiChatPageWidget.routeName,
-          path: AiChatPageWidget.routePath,
-          builder: (context, params) => AiChatPageWidget(),
-        ),
+            name: AiChatPageWidget.routeName,
+            path: AiChatPageWidget.routePath,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: AiChatPageWidget(),
+                )),
         FFRoute(
-          name: EditModeRewardWidget.routeName,
-          path: EditModeRewardWidget.routePath,
-          builder: (context, params) => EditModeRewardWidget(),
-        ),
+            name: EditModeRewardWidget.routeName,
+            path: EditModeRewardWidget.routePath,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: EditModeRewardWidget(),
+                )),
         FFRoute(
-          name: CreateSquadPageWidget.routeName,
-          path: CreateSquadPageWidget.routePath,
-          builder: (context, params) => CreateSquadPageWidget(),
-        )
+            name: CreateSquadPageWidget.routeName,
+            path: CreateSquadPageWidget.routePath,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: CreateSquadPageWidget(),
+                )),
+        FFRoute(
+            name: StudySquadsDetailPageWidget.routeName,
+            path: StudySquadsDetailPageWidget.routePath,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: StudySquadsDetailPageWidget(),
+                )),
+        FFRoute(
+            name: SquadsChatGroupWidget.routeName,
+            path: SquadsChatGroupWidget.routePath,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: SquadsChatGroupWidget(),
+                )),
+        FFRoute(
+            name: SquadsVoiceCallWidget.routeName,
+            path: SquadsVoiceCallWidget.routePath,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: SquadsVoiceCallWidget(),
+                )),
+        FFRoute(
+            name: ProfileDetailPageWidget.routeName,
+            path: ProfileDetailPageWidget.routePath,
+            builder: (context, params) => NavBarPage(
+                  initialPage: '',
+                  page: ProfileDetailPageWidget(),
+                ))
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
 

@@ -371,48 +371,60 @@ class _RewardsPageWidgetState extends State<RewardsPageWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                             ),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceEvenly,
-                                              children: [
-                                                Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          0.0, -0.75),
-                                                  child: wrapWithModel(
-                                                    model:
-                                                        _model.itemOwnedModel1,
-                                                    updateCallback: () =>
-                                                        safeSetState(() {}),
-                                                    child: ItemOwnedWidget(),
-                                                  ),
+                                            child: Align(
+                                              alignment: AlignmentDirectional(
+                                                  0.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 20.0, 0.0, 0.0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceEvenly,
+                                                  children: [
+                                                    Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              0.0, -0.75),
+                                                      child: wrapWithModel(
+                                                        model: _model
+                                                            .itemOwnedModel1,
+                                                        updateCallback: () =>
+                                                            safeSetState(() {}),
+                                                        child:
+                                                            ItemOwnedWidget(),
+                                                      ),
+                                                    ),
+                                                    Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              0.0, -0.75),
+                                                      child: wrapWithModel(
+                                                        model: _model
+                                                            .itemShopModel1,
+                                                        updateCallback: () =>
+                                                            safeSetState(() {}),
+                                                        child: ItemShopWidget(),
+                                                      ),
+                                                    ),
+                                                    Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              0.0, -0.75),
+                                                      child: wrapWithModel(
+                                                        model: _model
+                                                            .itemShopModel2,
+                                                        updateCallback: () =>
+                                                            safeSetState(() {}),
+                                                        child: ItemShopWidget(),
+                                                      ),
+                                                    ),
+                                                  ],
                                                 ),
-                                                Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          0.0, -0.75),
-                                                  child: wrapWithModel(
-                                                    model:
-                                                        _model.itemShopModel1,
-                                                    updateCallback: () =>
-                                                        safeSetState(() {}),
-                                                    child: ItemShopWidget(),
-                                                  ),
-                                                ),
-                                                Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          0.0, -0.75),
-                                                  child: wrapWithModel(
-                                                    model:
-                                                        _model.itemShopModel2,
-                                                    updateCallback: () =>
-                                                        safeSetState(() {}),
-                                                    child: ItemShopWidget(),
-                                                  ),
-                                                ),
-                                              ],
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -430,48 +442,54 @@ class _RewardsPageWidgetState extends State<RewardsPageWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                             ),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceEvenly,
-                                              children: [
-                                                Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          0.0, -0.75),
-                                                  child: wrapWithModel(
-                                                    model:
-                                                        _model.itemOwnedModel2,
-                                                    updateCallback: () =>
-                                                        safeSetState(() {}),
-                                                    child: ItemOwnedWidget(),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 20.0, 0.0, 0.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                children: [
+                                                  Align(
+                                                    alignment:
+                                                        AlignmentDirectional(
+                                                            0.0, -0.75),
+                                                    child: wrapWithModel(
+                                                      model: _model
+                                                          .itemOwnedModel2,
+                                                      updateCallback: () =>
+                                                          safeSetState(() {}),
+                                                      child: ItemOwnedWidget(),
+                                                    ),
                                                   ),
-                                                ),
-                                                Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          0.0, -0.75),
-                                                  child: wrapWithModel(
-                                                    model:
-                                                        _model.itemShopModel3,
-                                                    updateCallback: () =>
-                                                        safeSetState(() {}),
-                                                    child: ItemShopWidget(),
+                                                  Align(
+                                                    alignment:
+                                                        AlignmentDirectional(
+                                                            0.0, -0.75),
+                                                    child: wrapWithModel(
+                                                      model:
+                                                          _model.itemShopModel3,
+                                                      updateCallback: () =>
+                                                          safeSetState(() {}),
+                                                      child: ItemShopWidget(),
+                                                    ),
                                                   ),
-                                                ),
-                                                Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          0.0, -0.75),
-                                                  child: wrapWithModel(
-                                                    model:
-                                                        _model.itemShopModel4,
-                                                    updateCallback: () =>
-                                                        safeSetState(() {}),
-                                                    child: ItemShopWidget(),
+                                                  Align(
+                                                    alignment:
+                                                        AlignmentDirectional(
+                                                            0.0, -0.75),
+                                                    child: wrapWithModel(
+                                                      model:
+                                                          _model.itemShopModel4,
+                                                      updateCallback: () =>
+                                                          safeSetState(() {}),
+                                                      child: ItemShopWidget(),
+                                                    ),
                                                   ),
-                                                ),
-                                              ],
+                                                ],
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -489,48 +507,54 @@ class _RewardsPageWidgetState extends State<RewardsPageWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                             ),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceEvenly,
-                                              children: [
-                                                Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          0.0, -0.75),
-                                                  child: wrapWithModel(
-                                                    model:
-                                                        _model.itemOwnedModel3,
-                                                    updateCallback: () =>
-                                                        safeSetState(() {}),
-                                                    child: ItemOwnedWidget(),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 20.0, 0.0, 0.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                children: [
+                                                  Align(
+                                                    alignment:
+                                                        AlignmentDirectional(
+                                                            0.0, -0.75),
+                                                    child: wrapWithModel(
+                                                      model: _model
+                                                          .itemOwnedModel3,
+                                                      updateCallback: () =>
+                                                          safeSetState(() {}),
+                                                      child: ItemOwnedWidget(),
+                                                    ),
                                                   ),
-                                                ),
-                                                Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          0.0, -0.75),
-                                                  child: wrapWithModel(
-                                                    model:
-                                                        _model.itemShopModel5,
-                                                    updateCallback: () =>
-                                                        safeSetState(() {}),
-                                                    child: ItemShopWidget(),
+                                                  Align(
+                                                    alignment:
+                                                        AlignmentDirectional(
+                                                            0.0, -0.75),
+                                                    child: wrapWithModel(
+                                                      model:
+                                                          _model.itemShopModel5,
+                                                      updateCallback: () =>
+                                                          safeSetState(() {}),
+                                                      child: ItemShopWidget(),
+                                                    ),
                                                   ),
-                                                ),
-                                                Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          0.0, -0.75),
-                                                  child: wrapWithModel(
-                                                    model:
-                                                        _model.itemShopModel6,
-                                                    updateCallback: () =>
-                                                        safeSetState(() {}),
-                                                    child: ItemShopWidget(),
+                                                  Align(
+                                                    alignment:
+                                                        AlignmentDirectional(
+                                                            0.0, -0.75),
+                                                    child: wrapWithModel(
+                                                      model:
+                                                          _model.itemShopModel6,
+                                                      updateCallback: () =>
+                                                          safeSetState(() {}),
+                                                      child: ItemShopWidget(),
+                                                    ),
                                                   ),
-                                                ),
-                                              ],
+                                                ],
+                                              ),
                                             ),
                                           ),
                                         ),

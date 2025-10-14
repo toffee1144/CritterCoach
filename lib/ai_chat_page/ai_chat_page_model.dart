@@ -18,6 +18,10 @@ class AiChatPageModel extends FlutterFlowModel<AiChatPageWidget> {
   late UserChatBubbleModel userChatBubbleModel2;
   // Model for AiChatBubble component.
   late AiChatBubbleModel aiChatBubbleModel3;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode;
+  TextEditingController? textController;
+  String? Function(BuildContext, String?)? textControllerValidator;
 
   @override
   void initState(BuildContext context) {
@@ -35,5 +39,7 @@ class AiChatPageModel extends FlutterFlowModel<AiChatPageWidget> {
     aiChatBubbleModel2.dispose();
     userChatBubbleModel2.dispose();
     aiChatBubbleModel3.dispose();
+    textFieldFocusNode?.dispose();
+    textController?.dispose();
   }
 }

@@ -20,3 +20,11 @@ export '/edit_mode_reward/edit_mode_reward_widget.dart'
     show EditModeRewardWidget;
 export '/create_squad_page/create_squad_page_widget.dart'
     show CreateSquadPageWidget;
+export '/study_squads_detail_page/study_squads_detail_page_widget.dart'
+    show StudySquadsDetailPageWidget;
+export '/squads_chat_group/squads_chat_group_widget.dart'
+    show SquadsChatGroupWidget;
+export '/squads_voice_call/squads_voice_call_widget.dart'
+    show SquadsVoiceCallWidget;
+export '/profile_detail_page/profile_detail_page_widget.dart'
+    show ProfileDetailPageWidget;
