@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "175309600186",
+    "project_id": "crittercoach-78a9c",
+    "storage_bucket": "crittercoach-78a9c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:175309600186:android:12a7ea8e6f25f9c9b95983",
+        "android_client_info": {
+          "package_name": "com.mycompany.crittercare"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3K4BZVXy8tZDwgOOi7WT-PPvDVUXzuhI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

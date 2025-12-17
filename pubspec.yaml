@@ -23,7 +23,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_svg: ^2.0.9
   google_fonts: ^6.2.1
   percent_indicator: ^4.2.3
   smooth_page_indicator: ^1.1.0
@@ -34,6 +33,13 @@ dependencies:
   http_parser: ^4.0.2
   mime: ^1.0.5
   equatable: ^2.0.7
+  flutter_svg: ^2.1.0
+  bloc: ^9.1.0
+  flutter_bloc: ^9.1.1
+  firebase_core: ^3.6.0
+  cloud_firestore: ^5.4.0
+  firebase_auth: ^5.3.0
+  shared_preferences: ^2.3.2
 
 dependency_overrides:
   http: 1.4.0
@@ -50,4 +56,42 @@ flutter:
   assets:
     - assets/features/homepage/
     - assets/features/onboarding/
+    - assets/features/planner/
+    - assets/features/squads/icons/
+    - assets/avatar/
+    - assets/global/icons/
+    
+    # Avatar base parts
+    - assets/avatar/base/Creature.svg
+    - assets/avatar/base/Base_Hat.svg
+
+    # Avatar accessories
+    - assets/avatar/accessories/Balloon.svg
+    - assets/avatar/accessories/Flower.svg
+    - assets/avatar/accessories/Glasses.svg
+    - assets/avatar/accessories/Watch.svg
+    - assets/avatar/accessories/Wings.svg
+
+    # Avatar hats / hair
+    - assets/avatar/hat/Bunny.svg
+    - assets/avatar/hat/Crown.svg
+    - assets/avatar/hat/Hat.svg
+    - assets/avatar/hat/Jambul.svg
+    - assets/avatar/hat/Pajamas Hat.svg
+    - assets/avatar/hat/Ponytail.svg
+
+    # Avatar shirts
+    - assets/avatar/shirt/Casual.svg
+    - assets/avatar/shirt/Dress.svg
+    - assets/avatar/shirt/Pajamas.svg
+    - assets/avatar/shirt/Suit.svg
+
+    # Squad icons
+    - assets/features/squads/icons/ic_book.svg
+    - assets/features/squads/icons/ic_star.svg
+    
+    # Auth icons
+    - assets/features/auth/blob/
+
+    # Global icons
     - assets/global/icons/

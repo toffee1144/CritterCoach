@@ -190,7 +190,10 @@ class ProofResultSuccessPage extends StatelessWidget {
                                 builder: (_) => const HomePage(),
                                 settings: RouteSettings(
                                   name: '/home',
-                                  arguments: HomeRefreshArgs(), // optional
+                                  arguments: {
+                                    'reason': 'proof_success',
+                                    'ts': DateTime.now(),
+                                  },
                                 ),
                               ),
                               (route) => false,

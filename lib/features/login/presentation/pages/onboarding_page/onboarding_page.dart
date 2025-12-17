@@ -1,8 +1,6 @@
+import 'package:critter_care/features/auth/auth_page.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
-// ⬇️ import HomePage kamu
-import 'package:critter_care/features/home/presentation/pages/home_page.dart';
 
 import 'meet_creature_page.dart';
 import 'daily_quest_page.dart';
@@ -74,23 +72,20 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       textStyle: const TextStyle(
                         fontWeight: FontWeight.bold, fontSize: 20),
                     ),
-                    onPressed: () {
-                      if (_index == 2) {
-                        // ✅ selesai onboarding → ke Home
-                        if (widget.onFinish != null) {
-                          widget.onFinish!();
-                        } else {
-                          Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(builder: (_) => const HomePage()),
-                          );
-                        }
-                      } else {
-                        _ctrl.nextPage(
-                          duration: const Duration(milliseconds: 300),
-                          curve: Curves.ease,
-                        );
-                      }
-                    },
+onPressed: () async {
+if (_index != 2) {
+_ctrl.nextPage(
+duration: const Duration(milliseconds: 300),
+curve: Curves.ease,
+);
+return;
+}
+await sl<CurrentUserStore>().clear(); // hapus auth_user
+if (!context.mounted) return;
+Navigator.of(context).pushReplacement(
+MaterialPageRoute(builder: (_) => const AuthPage()),
+);
+},
                     child: Text(_index == 2 ? "Let's Start" : 'Next'),
                   ),
                 ),
